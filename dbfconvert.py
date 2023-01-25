@@ -4,11 +4,11 @@ from os import walk
 directory = input('Directory: ')
 
 files = []
+DBFfiles = []
+
 for (dirpath, dirnames, filenames) in walk(directory):
     files.extend(filenames)
     break
-
-DBFfiles = []
 
 for i in range(len(files)):
     x = files[i-1]
