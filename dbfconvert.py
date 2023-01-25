@@ -2,16 +2,6 @@ import csv, os
 from dbfread import DBF
 from os import walk
 
-def dbf_to_csv(dbf_table_pth):
-    csv_fn = dbf_table_pth[:-4]+ ".csv"
-    table = DBF(dbf_table_pth)
-    with open(csv_fn, 'w', newline = '') as f:
-        writer = csv.writer(f)
-        writer.writerow(table.field_names)
-        for record in table:
-            writer.writerow(list(record.values()))
-    return csv_fn
-
 directory = input('Directory: ')
 
 files = []
@@ -36,4 +26,3 @@ for i in range(len(DBFfiles)):
         writer = csv.writer(outfile, delimiter=';')
         for row in reader:
             writer.writerow(row)
-        
