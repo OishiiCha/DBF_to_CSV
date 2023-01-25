@@ -1,5 +1,4 @@
 import csv, os
-from dbfread import DBF
 from os import walk
 
 directory = input('Directory: ')
